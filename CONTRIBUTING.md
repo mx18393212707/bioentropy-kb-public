@@ -2,6 +2,49 @@
 
 > 适用版本：2026-09-21 v2（public 仓库 + 开放贡献）
 
+## 🔄 先看这里：如何获取最新更新
+
+**clone 只需一次，之后用 `pull` 同步即可，不必重新 clone。**
+
+维护者更新知识库后，在你本地仓库目录里执行：
+
+```bash
+cd "你的路径/bioentropy-kb-public"
+git pull
+```
+
+Obsidian 会自动加载变化（新增/修改的笔记立即出现，工作台内容同步刷新）。
+
+### 更省事的办法：让 Obsidian 自动拉取（推荐）
+
+装社区插件 **Obsidian Git**（Settings → 第三方插件 → 浏览 → 搜索 "Git"）：
+
+| 设置项 | 建议值 | 效果 |
+|---|---|---|
+| Pull updates on startup | 开启 | 每次打开 Obsidian 自动同步一次 |
+| Auto pull interval (minutes) | 60（或按需） | 每小时后台自动同步 |
+| Disable push | 只读用户可开启 | 避免误推送 |
+
+设置好之后，你完全不用碰命令行——打开 Obsidian 就是最新版。也可以随时用命令面板执行 `Obsidian Git: Pull` 手动拉取。
+
+### 冲突怎么办？
+
+- **只读浏览（没改过文件）**：`git pull` 永远顺畅，不会冲突。
+- **本地改过东西**：pull 可能提示冲突。最干净的解法是先把改动收起来：
+  ```bash
+  git stash        # 暂存本地改动
+  git pull         # 同步最新版
+  git stash pop    # 恢复你的改动（如冲突会提示你手动选）
+  ```
+- **想长期贡献**：别直接在主分支改，按下面「方式 2」走 fork + PR，就不会和同步打架。
+- **彻底重置**（放弃本地一切改动，只要最新版）：
+  ```bash
+  git fetch origin
+  git reset --hard origin/main
+  ```
+
+---
+
 ## 三种参与方式（按技术门槛排序）
 
 ### 方式 1：反馈建议（零门槛，无需账号也行）

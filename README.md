@@ -30,3 +30,5 @@
 5. **打开工作台**：按 `Ctrl + P`（macOS: `Cmd + P`）→ 输入 `Apex Dashboard: Open Dashboard` → 回车，即可看到与截图一致的七列工作台（`dashboard.md` 已在仓库根目录）
 
 点击工作台里的任意卡片即可跳转对应笔记；底部「数据库」看板可按 tags / domain / topics 检索全库。
+
+> **获取后续更新**：clone 只需一次，之后在仓库目录里执行 `git pull` 即可同步最新内容（详见 [CONTRIBUTING.md](CONTRIBUTING.md)）。
