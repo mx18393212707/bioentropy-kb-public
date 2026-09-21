@@ -1,0 +1,23 @@
+# Obsidian 内部文件
+.obsidian/
+.trash/
+
+# 备份目录
+.dashboard-backup/
+_拆分前快照/
+_备份/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+*~
+__pycache__/
+
+# 用户工作脚本（不进入仓库，sync 脚本在维护者本地）
+share_sync*.py
