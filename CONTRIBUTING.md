@@ -1,37 +1,56 @@
 # 贡献指南 · Contribution Guide
 
-## 协作三原则
+> 适用版本：2026-09-21 v2（public 仓库 + 开放贡献）
 
-1. **公共仓库只读**：不要直接 push 到 `main` 分支。所有改动必须通过 Pull Request。
-2. **编辑在本地**：不要在 GitHub 网页里直接编辑文档（会丢失 frontmatter 元数据）。Clone 到本地用 Obsidian 编辑。
-3. **PR 必经维护者审核**：所有合并需 1 位 reviewer 通过。
+## 三种参与方式（按技术门槛排序）
 
-## 工作流（标准 7 步）
+### 方式 1：反馈建议（零门槛，无需账号也行）
+
+最简单：直接访问 https://github.com/mx18393212707/bioentropy-kb-public/issues → **New issue** → 选类型：
+- 📝 **纠错**：发现笔记里有错别字/数据/引用错误 → 维护者会修
+- 💡 **建议**：希望增加某领域/某文献/某主题 → 维护者会跟进
+- ❓ **提问**：想了解某文献/某概念 → 维护者会回复
+
+> 提交 issue 不需要 GitHub 账号（GitHub 支持匿名 issue，但功能受限）。
+
+### 方式 2：fork + 提 PR（需 GitHub 账号，会用 Obsidian）
+
+适合技术型同事，想实际改文档：
 
 ```bash
-# 1. fork 仓库（GitHub 网页操作，点 Fork 按钮）
-# 2. clone 你 fork 的仓库
-git clone https://github.com/<your-fork>/bioentropy-kb-public.git
+# 1. 在 GitHub 网页点 Fork 按钮（复制到你的账号下）
 
-# 3. 进入项目目录，开新分支
+# 2. clone 你的 fork
+git clone https://github.com/<你的账号>/bioentropy-kb-public.git
 cd bioentropy-kb-public
-git checkout -b fix/xxx 或 feat/xxx 或 docs/xxx
 
-# 4. 用 Obsidian 打开这个目录编辑
-#    - Obsidian → Open another vault → Open folder as vault → 选这个目录
+# 3. 装 Obsidian + Dataview + Apex Dashboard 三个软件/插件
+#    然后 Open folder as vault → 选这个目录
 
-# 5. 编辑后提交（保持 frontmatter 完整，特别是 domain/topic/tags）
+# 4. 编辑你想改的文档
+#    ⚠️ 不要在 GitHub 网页里编辑，会丢失 frontmatter 元数据
+
+# 5. 提交推送
 git add -A
 git commit -m "类型: 简短描述"
-git push origin <你的分支名>
+git push origin main
 
-# 6. 在 GitHub 上点 "Compare & pull request"
+# 6. 在你的 fork 页面点 "Contribute" → "Open pull request"
 # 7. 等维护者 review + merge
 ```
 
-## 文档组织
+### 方式 3：私有贡献（直接发资料给维护者）
 
-每篇 .md 必须有 YAML frontmatter：
+如果你有想要补充的文献/笔记但不方便自己提 PR：
+
+- 直接微信/邮件发给维护者
+- 维护者会按格式入库并加署你的贡献记录
+
+## 编辑须知（方式 2 必读）
+
+### 保留元数据
+
+每篇 `.md` 必须保留 YAML frontmatter 完整（dashboard 工作台依赖 domain/topics/tags 字段自动分类）：
 
 ```yaml
 ---
@@ -45,26 +64,35 @@ share: true                       # 标记为可分享
 ---
 ```
 
-工作台 dashboard.md 已按 domain 分 6 列自动分类。新增笔记后会被自动收录。
+### 内容禁区
 
-## 内容禁区
+- ❌ **不要写个人研究笔记、导师汇报、未发表猜想**——这些应留在维护者本地
+- ❌ **不要分享带 DOI 但未发表/付费墙的全文**（仅放题录与笔记）
+- ❌ **不要添加 .docx/.pdf 原始文件**（仓库体积会爆炸）；如需分享请用 .md 转写
+- ❌ **不要直接编辑 dashboard.md**——它是自动生成的（保护 frontmatter 不被覆盖）
+- ❌ **不要动 `.obsidian/` 目录**——是 Obsidian 本地配置，对他人无用
 
-- **不要写个人研究笔记、导师汇报、未发表猜想** —— 这些应该留在维护者本地
-- **不要分享带 DOI 但未发表/付费墙的全文**（仅放题录与笔记）
-- **不要添加 .docx/.pdf 原始文件**（仓库体积会爆炸）；如需分享请用 .md 转写
+### PR 检查清单
 
-## 提 PR 的检查清单
-
-- [ ] frontmatter 完整（domain/topics/tags 都填）
+- [ ] frontend 完整（domain/topics/tags 都填）
 - [ ] 没有删除/重命名其他文档的链接（除非必要并在 PR 描述说明）
 - [ ] commit message 写明意图
 - [ ] 在 PR 描述里写：改了哪些文档、为什么改、有没有连带影响
 
+## 文档组织原则
+
+- 每篇笔记对应一个主题/一篇文献/一次读书
+- 内部链接用 `[[笔记名]]` 双向链接
+- 段落首行不缩进；用 `##` `###` 标题分级
+- 中文标点统一全角
+- 引用文献：作者+期刊+年份，DOI 链接放在脚注或文末
+
 ## 维护者
 
 - 主维护者：项目组负责人
-- 紧急联系：GitHub Issues 或私聊维护者
+- 反馈通道：GitHub Issues
+- 紧急联系：直接微信私聊维护者
 
 ---
 
-_本仓库从本地完整 vault 按隐私规则筛选同步而来，私密文档（导师汇报、个人批注、毕设档案内部文件）永远不会进入本仓库。如发现误分享，请立即 issue 通知维护者删除。_
+_本仓库从本地完整 vault 按隐私规则筛选同步而来，私密文档（导师汇报、个人批注、毕设档案内部文件等）永远不会进入本仓库。如发现误分享，请立即 issue 通知维护者删除。_
