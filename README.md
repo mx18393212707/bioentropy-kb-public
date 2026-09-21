@@ -1,35 +1,32 @@
-# Bioentropy & Complex System Lab
+# 生物熵课题组 · 共享知识库
 
-生物熵课题组的共享知识库镜像，由本地完整知识库按隐私规则筛选同步而来。
+以 Obsidian 七列工作台为入口的知识库：从工作台一览全库、点击卡片直接跳转任意笔记。
 
-**本仓库由 Git 托管 + Obsidian 本地阅读模式构建。**
+## 🖼 知识库效果
 
-## 快速上手（6 步）
+**七列工作台**（1 张项目组主线 memo + 6 大研究域 + 底部数据库看板）：
 
-1. **安装 Obsidian**：[obsidian.md/download](https://obsidian.md/download)（Windows / macOS / Linux 全平台，免费）
-2. **安装必装插件**：
-   - [Dataview](https://github.com/blacksmithgu/obsidian-dataview) — 工作台列查询
-   - [Apex Dashboard](https://github.com/chetachi/obsidian-apex-dashboard) — 七列工作台
-3. **Clone 本仓库到本地**：
+<p align="center">
+  <img src="docs/assets/dashboard.png" alt="七列工作台" width="100%"/>
+</p>
+
+**文献关系网络图**（节点 = 笔记/文献，连边 = 共现关系）：
+
+<p align="center">
+  <img src="docs/assets/network.png" alt="文献关系网络图" width="80%"/>
+</p>
+
+## 🚀 如何上手
+
+1. **安装 [Obsidian](https://obsidian.md/download)**（全平台免费）
+2. **安装 2 个社区插件**（Obsidian → 设置 → 第三方插件 → 浏览）：
+   - **Dataview** — 工作台列查询引擎
+   - **Apex Dashboard** — 七列工作台
+3. **克隆本仓库**：
    ```bash
    git clone https://github.com/mx18393212707/bioentropy-kb-public.git
    ```
-4. **Obsidian 打开 `bioentropy-kb-public` 文件夹**（"Open another vault" → "Open folder as vault"）
-5. **⭐ 打开工作台（最关键的一步）**：
+4. **用 Obsidian 打开**：启动器 → "Open another vault" → "Open folder as vault" → 选择 `bioentropy-kb-public` 文件夹
+5. **打开工作台**：按 `Ctrl + P`（macOS: `Cmd + P`）→ 输入 `Apex Dashboard: Open Dashboard` → 回车，即可看到与截图一致的七列工作台（`dashboard.md` 已在仓库根目录）
 
-   按 `Ctrl + P`（macOS: `Cmd + P`）打开命令面板 → 输入 `Apex Dashboard: Open Dashboard` → 回车
-
-   此时会新开一个 tab，里面就是七列工作台。
-
-   > **为什么必须手动这一步？** Apex Dashboard 是注册了一个独立视图（不是接管 markdown 文件的渲染）。即使仓库里已有 `dashboard.md`，你也要主动触发命令才能看到工作台视图。
-
-6. **（可选）设为启动项**：Obsidian Settings → Core Plugins → 启用 **Workspaces** → 命名（例："生物熵知识库"） → 把当前布局保存为 workspace。下次打开 vault 自动恢复。
-
-> **看不到工作台怎么办？**
-> - 确认 Dataview 和 Apex Dashboard 都已**启用**（Settings → Community plugins，列表里不是灰色）
-> - 重新执行步骤 5（命令面板 → `Apex Dashboard: Open Dashboard`）
-> - 如果命令找不到：在 Community plugins 搜 Apex Dashboard → Re-enable → 重启 Obsidian
-
-## 贡献与编辑
-
-请先阅读 [`CONTRIBUTING.md`](./CONTRIBUTING.md) 了解协作流程。
+点击工作台里的任意卡片即可跳转对应笔记；底部「数据库」看板可按 tags / domain / topics 检索全库。
